@@ -1,0 +1,38 @@
+/* Selector universal: Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Selector de elemento */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+    padding: 50px;
+}
+
+/* Selector de ID */
+#encabezado-principal {
+    margin-bottom: 20px;
+    color: #0056b3;
+}
+
+/* Selector de clase */
+.boton-interactivo {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Cambia el cursor a la mano */
+    transition: background-color 0.3s ease;
+}
+
+/* Pseudo-clase :hover */
+.boton-interactivo:hover {
+    background-color: #003d82; /* Cambia a un azul más oscuro */
+}
