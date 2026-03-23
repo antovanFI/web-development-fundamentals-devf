@@ -3,16 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introducción a CSS</title>
+    <title>Web Development Fundamentals DEVF</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="encabezado-principal">
-        <h1>Mi Primer Proyecto con CSS Externo</h1>
+    <header>
+        <h1>Fundamentos de CSS</h1>
+        <p>Repaso de propiedades básicas y Modelo de Caja</p>
     </header>
-    <main>
-        <p>Esta página está siendo estilizada desde un archivo .css separado.</p>
-        <button class="boton-interactivo">Pasa el ratón por aquí</button>
+
+    <main class="container">
+        <section class="grid-concepts">
+            <article class="card" id="box-model-card">
+                <h3>Modelo de Caja</h3>
+                <p>Contenido, Padding, Border y Margin trabajando juntos.</p>
+            </article>
+
+            <article class="card">
+                <h3>Selectores y Estados</h3>
+                <p>Uso de clases, IDs y la pseudo-clase :hover para interactividad.</p>
+            </article>
+        </section>
+
+        <section class="actions">
+            <button class="btn-main">¡Haz clic aquí!</button>
+        </section>
     </main>
+
+    <footer>
+        <p>Proyecto creado para el curso de DEVF - 2026</p>
+    </footer>
 </body>
 </html>
