@@ -265,3 +265,49 @@ header h1 {
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
+
+/* --- DISEÑO RESPONSIVO (Mobile-First) --- */
+/* Base para móviles */
+.grid-concepts, .recursos-container, .panel-herramientas {
+    display: flex;
+    flex-direction: column; /* Pilas verticales en celular */
+    gap: 20px;
+}
+
+/* Tablet (Pantallas medianas: 768px en adelante) */
+@media (min-width: 768px) {
+    .grid-concepts, .recursos-container {
+        flex-direction: row; /* Se ponen de lado a lado */
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .card, .recurso-card {
+        flex: 1 1 45%; /* Ocupan casi la mitad de la pantalla */
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Escritorio (Pantallas grandes: 1024px en adelante) */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .recurso-card {
+        flex: 1; /* Tres columnas perfectas */
+    }
+
+    .panel-herramientas {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    header {
+        padding: 60px 0;
+    }
+}
