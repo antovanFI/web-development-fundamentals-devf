@@ -3,111 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development Fundamentals DEVF</title>
+    <title>Portal de Ingeniería | Materiales de Clase</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar-fija">
-        <div class="logo">Mi Portafolio - Angel</div>
-        <ul class="menu">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Proyectos</a></li>
-        </ul>
-    </nav>
-    <header>
-        <h1>Fundamentos de CSS</h1>
-        <p>Repaso de propiedades básicas y Modelo de Caja</p>
+    <header class="navbar">
+        <div class="logo">Prof. Angel</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#herramientas">Herramientas</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="container">
-        <section class="seccion-proyectos">
-            <div class="tarjeta-proyecto">
-                <span class="etiqueta-status">Nuevo</span>
-                <h3>Administración de Servicios</h3>
-                <p>Configuración de servidores Linux y Azure.</p>
-            </div>
-        </section>
-        <section class="grid-concepts">
-            <article class="card" id="box-model-card">
-                <h3>Modelo de Caja</h3>
-                <p>Contenido, Padding, Border y Margin trabajando juntos.</p>
-            </article>
-
-            <article class="card">
-                <h3>Selectores y Estados</h3>
-                <p>Uso de clases, IDs y la pseudo-clase :hover para interactividad.</p>
-            </article>
+        <section class="hero">
+            <h1>Bienvenidos al Semestre</h1>
+            <p>Materiales, comandos y arquitectura de software para nuestros grupos.</p>
         </section>
 
-        <section class="actions">
-            <button class="btn-main">¡Haz clic aquí!</button>
-        </section>
-
-        <section class="inheritance-demo">
-            <div class="parent-container">
-                <h2>Sección de Herencia</h2>
-                <p>Este párrafo hereda el color y la fuente de su contenedor padre.</p>
-                <ul>
-                    <li>Elemento de lista heredando estilos.</li>
-                    <li>
-                        <strong>Texto en negrita</strong> que también mantiene el color heredado.
-                    </li>
-                </ul>
-                <button class="reset-button">Botón con Herencia Forzada</button>
-            </div>
-        </section>
-
-        <section class="flex-demo-section">
-            <h2>Materiales de Clase</h2>
+        <div class="layout-principal">
             
-            <div class="recursos-container">
-                
-                <article class="recurso-card">
+            <section id="recursos" class="recursos-grid">
+                <article class="card">
                     <h3>Comandos Básicos de Linux</h3>
-                    <p>Guía rápida para dominar la terminal, desde 'cd' hasta 'cat'.</p>
+                    <p>Domina la terminal: uso avanzado de cat, ls, grep y gestión de permisos del sistema.</p>
                 </article>
-        
-                <article class="recurso-card">
+                <article class="card">
+                    <h3>Bases de Datos Relacionales</h3>
+                    <p>Modelado Entidad-Relación y notación Chen para resolución de casos de estudio.</p>
+                </article>
+                <article class="card">
                     <h3>Despliegue en Azure</h3>
-                    <p>Paso a paso para publicar aplicaciones web y contenedores en la nube.</p>
+                    <p>Arquitectura en la nube usando Azure Container Apps y monitoreo con Application Insights.</p>
                 </article>
-        
-                <article class="recurso-card">
-                    <h3>Modelado de Datos</h3>
-                    <p>Ejemplos prácticos de diagramas Entidad-Relación usando notación Chen.</p>
+                <article class="card">
+                    <h3>Prolog & Lógica</h3>
+                    <p>Configuración del entorno en Visual Studio Code y resolución de problemas lógicos.</p>
                 </article>
-        
-            </div>
-        </section>
+            </section>
 
-        <section class="alineacion-demo">
-            
-            <div class="banner-servidor">
-                <h2>Estado del Servidor: En Línea</h2>
-            </div>
-        
-            <div class="panel-herramientas">
-                <article class="herramienta">
-                    <h3>Terminal Linux</h3>
-                    <p>Consola activa</p>
-                </article>
-        
-                <article class="herramienta destacada">
-                    <h3>Despliegue Azure</h3>
-                    <p>Sincronizando...</p>
-                </article>
-        
-                <article class="herramienta">
-                    <h3>Base de Datos</h3>
-                    <p>Conexión estable</p>
-                </article>
-            </div>
-        
-        </section>
+            <aside id="herramientas" class="sidebar">
+                <h3>Panel de Herramientas</h3>
+                <ul>
+                    <li><a href="#">GitHub Classroom</a></li>
+                    <li><a href="#">Kahoot! & Mentimeter</a></li>
+                    <li><a href="#">Criterios CACEI</a></li>
+                </ul>
+            </aside>
+
+        </div>
     </main>
 
     <footer>
-        <p>Proyecto creado para el curso de DEVF - 2026</p>
+        <p>&copy; 2026 - Material educativo interactivo.</p>
     </footer>
 </body>
 </html>
