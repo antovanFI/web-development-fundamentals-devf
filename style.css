@@ -1,313 +1,145 @@
-/* Configuración Global y Herencia */
+/* =========================================
+   1. VARIABLES Y RESET (Buenas Prácticas)
+   ========================================= */
 :root {
-    --primary-color: #0056b3;
-    --text-color: #333;
-    --bg-color: #f4f4f9;
+    --color-primario: #0078D4; /* Azul técnico, limpio */
+    --color-secundario: #f3f2f1;
+    --color-texto: #333333;
+    --color-blanco: #ffffff;
+    --sombra-card: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Evita que el padding rompa el ancho */
 }
 
 body {
-    /* Aprovechamos la herencia: todos los textos del sitio usarán estos estilos */
-    font-family: 'Segoe UI', sans-serif;
-    color: var(--text-color);
-    background-color: var(--bg-color);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: var(--color-texto);
+    background-color: var(--color-secundario);
     line-height: 1.6;
-    padding: 2rem;
 }
 
-/* 2. Header con estilos de texto */
-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-}
-
-/* Contenedor y Flexbox */
-.container {
-    max-width: 800px;
-    margin: 0 auto; /* Centra el bloque horizontalmente */
-}
-
-.grid-concepts {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-/* Modelo de Caja en acción (Tarjetas) */
-.card {
-    background: white;
-    border: 1px solid #ddd; 
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin: 1rem 0;
-}
-
-/* Uso de pseudo-clase para interactividad */
-.card:hover {
-    border-color: var(--primary-color);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Botón interactivo */
-.btn-main {
-    display: block;
-    width: 200px;
-    margin: 0 auto;
-    padding: 12px;
-    background-color: #0056b3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.btn-main:hover {
-    background-color: #003d82;
-}
-
-/* Definición en el contenedor PADRE */
-.parent-container {
-    /* Propiedades que los hijos HEREDARÁN automáticamente */
-    font-family: 'Verdana', sans-serif;
-    color: #2c3e50;
-    line-height: 1.8;
-    
-    /* Propiedades que NO se heredan (Modelo de Caja) */
-    border: 2px solid #3498db;
-    padding: 20px;
-    margin-top: 30px;
-    border-radius: 10px;
-}
-
-/* Ejemplo de forzar herencia */
-.reset-button {
-    /* Los botones no heredan la fuente por defecto en algunos navegadores */
-    font-family: inherit; 
-    font-size: 1rem;
-    background-color: #3498db;
-    color: white;
-    /* Forzamos que el botón use el mismo radio de borde que el padre */
-    border-radius: inherit; 
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-.reset-button:hover {
-    background-color: #2980b9;
-}
-
-/* --- ESTILOS DE FLEXBOX --- */
-.flex-demo-section {
-    margin: 40px 0;
-    padding: 20px;
-}
-
-.flex-demo-section h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #2c3e50;
-}
-
-/* El Contenedor Padre */
-.recursos-container {
-    display: flex; /* Activa Flexbox */
-    flex-direction: row; /* Eje principal horizontal (por defecto) */
-    justify-content: space-between; /* Separa las tarjetas equitativamente */
-    align-items: stretch; /* Estira las tarjetas para que midan lo mismo de alto */
-    flex-wrap: wrap; /* Permite que las tarjetas bajen de línea si no caben */
-    gap: 20px; /* Crea espacio limpio entre las tarjetas */
-}
-
-/* Los Elementos Hijos (Items Flex) */
-.recurso-card {
-    /* El tamaño base será más o menos un tercio del espacio, menos el gap */
-    flex-basis: 30%; 
-    flex-grow: 1; /* Si sobra espacio, las tarjetas crecerán para ocuparlo */
-    
-    /* Estilos del Box Model y visuales */
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.recurso-card h3 {
-    color: #0366d6;
-    margin-top: 0;
-}
-
-/* --- ESTILOS DE ALINEACIÓN FLEXBOX --- */
-.alineacion-demo {
-    margin: 40px auto;
-    max-width: 1000px;
-    font-family: Arial, sans-serif;
-}
-
-.banner-servidor {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente en el eje principal */
-    align-items: center;     /* Centra verticalmente en el eje cruzado */
-    
-    height: 120px;
-    background-color: #0078D4;
-    color: white;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.panel-herramientas {
-    display: flex;
-    justify-content: space-evenly; /* Distribuye el espacio sobrante equitativamente */
-    align-items: flex-start;       /* Todos los elementos se pegan arriba por defecto */
-    
-    height: 250px;
-    background-color: #f8f9fa;
-    border: 2px dashed #ced4da;
-    border-radius: 8px;
-    padding: 20px;
-}
-
-/* Estilo base de las tarjetas */
-.herramienta {
-    background-color: #2b2b2b;
-    color: #4af626; /* Verde tipo terminal */
-    padding: 20px;
-    border-radius: 6px;
-    width: 25%;
-    text-align: center;
-}
-
-.herramienta.destacada {
-    align-self: flex-end; /* Obliga a este elemento a irse hasta abajo, ignorando el flex-start del padre */
-    
-    background-color: #e74c3c;
-    color: white;
-    border: 2px solid #c0392b;
-}
-
-.herramienta h3 {
-    margin-top: 0;
-    font-size: 1.1rem;
-}
-
-
-/* --- POSICIONAMIENTO AVANZADO --- */
-
-/* 1. Position Fixed: La barra se queda arriba sin importar el scroll */
-.navbar-fija {
-    position: fixed;
+/* =========================================
+   2. POSITION & FLEXBOX (Navegación)
+   ========================================= */
+.navbar {
+    position: sticky; /* Se queda fija en la parte superior al hacer scroll */
     top: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #2c3e50;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5%;
-    z-index: 1000; /* Siempre por encima de todo */
-    color: white;
+    justify-content: space-between; /* Separa el logo de los links */
+    align-items: center; /* Centra verticalmente */
+    z-index: 1000; /* Asegura que pase por encima de todo */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.contenedor-principal {
-    margin-top: 80px; /* Evita que la navbar cubra el inicio del contenido */
-    padding: 20px;
+.navbar a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-weight: 600;
 }
 
-/* 2. Position Relative + Absolute */
-.tarjeta-proyecto {
-    position: relative; /* Contenedor de referencia */
-    width: 300px;
-    padding: 20px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.etiqueta-status {
-    position: absolute; /* Se ubica respecto a la tarjeta */
-    top: -10px;
-    right: -10px;
-    background-color: #e74c3c;
-    color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-/* 3. Botón Flotante (Fixed en la esquina inferior) */
-.boton-flotante {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-/* --- DISEÑO RESPONSIVO (Mobile-First) --- */
-/* Base para móviles */
-.grid-concepts, .recursos-container, .panel-herramientas {
+.nav-links {
     display: flex;
-    flex-direction: column; /* Pilas verticales en celular */
+    list-style: none;
     gap: 20px;
 }
 
-/* Tablet (Pantallas medianas: 768px en adelante) */
+/* =========================================
+   3. MOBILE-FIRST (Estilos Base para Celular)
+   ========================================= */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--color-blanco);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: var(--sombra-card);
+}
+
+.layout-principal {
+    display: flex;
+    flex-direction: column; /* Apila elementos verticalmente en móvil */
+    gap: 20px;
+}
+
+/* Grid para tarjetas: 1 sola columna en móvil */
+.recursos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.card, .sidebar {
+    background: var(--color-blanco);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--sombra-card);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Pequeña animación al pasar el mouse */
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar a {
+    color: var(--color-primario);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #242424;
+    color: var(--color-blanco);
+    margin-top: 40px;
+}
+
+/* =========================================
+   4. MEDIA QUERIES (Tablet y Escritorio)
+   ========================================= */
+
+/* Dispositivos Medianos (Tablets: 768px en adelante) */
 @media (min-width: 768px) {
-    .grid-concepts, .recursos-container {
-        flex-direction: row; /* Se ponen de lado a lado */
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    .card, .recurso-card {
-        flex: 1 1 45%; /* Ocupan casi la mitad de la pantalla */
-    }
-
-    header h1 {
-        font-size: 2.5rem;
+    .recursos-grid {
+        grid-template-columns: repeat(2, 1fr); /* Cambia a 2 columnas */
     }
 }
 
-/* Escritorio (Pantallas grandes: 1024px en adelante) */
+/* Dispositivos Grandes (Laptops/Escritorio: 1024px en adelante) */
 @media (min-width: 1024px) {
-    .container {
-        max-width: 1100px;
-        margin: 0 auto;
+    .layout-principal {
+        flex-direction: row; /* La barra lateral se pone junto a las tarjetas */
+        align-items: flex-start;
     }
 
-    .recurso-card {
-        flex: 1; /* Tres columnas perfectas */
+    .recursos-grid {
+        flex: 3; /* El contenido principal ocupa 3 partes del espacio */
     }
 
-    .panel-herramientas {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    header {
-        padding: 60px 0;
+    .sidebar {
+        flex: 1; /* La barra lateral ocupa 1 parte */
+        position: sticky; /* La barra lateral te sigue al hacer scroll */
+        top: 80px; 
     }
 }
