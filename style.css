@@ -148,3 +148,58 @@ header h1 {
     color: #0366d6;
     margin-top: 0;
 }
+
+/* --- ESTILOS DE ALINEACIÓN FLEXBOX --- */
+.alineacion-demo {
+    margin: 40px auto;
+    max-width: 1000px;
+    font-family: Arial, sans-serif;
+}
+
+.banner-servidor {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente en el eje principal */
+    align-items: center;     /* Centra verticalmente en el eje cruzado */
+    
+    height: 120px;
+    background-color: #0078D4;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.panel-herramientas {
+    display: flex;
+    justify-content: space-evenly; /* Distribuye el espacio sobrante equitativamente */
+    align-items: flex-start;       /* Todos los elementos se pegan arriba por defecto */
+    
+    height: 250px;
+    background-color: #f8f9fa;
+    border: 2px dashed #ced4da;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Estilo base de las tarjetas */
+.herramienta {
+    background-color: #2b2b2b;
+    color: #4af626; /* Verde tipo terminal */
+    padding: 20px;
+    border-radius: 6px;
+    width: 25%;
+    text-align: center;
+}
+
+.herramienta.destacada {
+    align-self: flex-end; /* Obliga a este elemento a irse hasta abajo, ignorando el flex-start del padre */
+    
+    background-color: #e74c3c;
+    color: white;
+    border: 2px solid #c0392b;
+}
+
+.herramienta h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
