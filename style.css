@@ -107,3 +107,44 @@ header h1 {
 .reset-button:hover {
     background-color: #2980b9;
 }
+
+/* --- ESTILOS DE FLEXBOX --- */
+.flex-demo-section {
+    margin: 40px 0;
+    padding: 20px;
+}
+
+.flex-demo-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+/* El Contenedor Padre */
+.recursos-container {
+    display: flex; /* Activa Flexbox */
+    flex-direction: row; /* Eje principal horizontal (por defecto) */
+    justify-content: space-between; /* Separa las tarjetas equitativamente */
+    align-items: stretch; /* Estira las tarjetas para que midan lo mismo de alto */
+    flex-wrap: wrap; /* Permite que las tarjetas bajen de línea si no caben */
+    gap: 20px; /* Crea espacio limpio entre las tarjetas */
+}
+
+/* Los Elementos Hijos (Items Flex) */
+.recurso-card {
+    /* El tamaño base será más o menos un tercio del espacio, menos el gap */
+    flex-basis: 30%; 
+    flex-grow: 1; /* Si sobra espacio, las tarjetas crecerán para ocuparlo */
+    
+    /* Estilos del Box Model y visuales */
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.recurso-card h3 {
+    color: #0366d6;
+    margin-top: 0;
+}
